@@ -9,10 +9,7 @@
 class Denys_Mymod_Block_Appliances
     extends Mage_Core_Block_Template
 {
-    protected function _beforeToHtml()
-    {
-        $this->setBlockCategoryId($cat_id);
-    }
+
     public function setCategoryId($cat_id)
     {
         $this->setBlockCategoryId($cat_id);
