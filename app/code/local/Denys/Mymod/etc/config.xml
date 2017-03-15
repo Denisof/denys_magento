@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Denys_Mymod>
+            <version>0.1.1</version>
+        </Denys_Mymod>
+    </modules>
+    <global>
+        <helpers>
+            <mymod>
+                <class>Denys_Mymod_Helper</class>
+            </mymod>
+        </helpers>
+        <blocks>
+            <mymod>
+                <class>Denys_Mymod_Block</class>
+            </mymod>
+        </blocks>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <mymod>
+                    <file>Denys_Mymod.xml</file>
+                </mymod>
+            </updates>
+        </layout>
+    </frontend>
+</config>

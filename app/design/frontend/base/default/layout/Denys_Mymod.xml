@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+
+    <cms_index_index>
+        <reference name="content">
+            <block type="core/template" before="-" template="denys/mymod/appliances.phtml">
+                <action method="setData"><key>category_id</key><value>42</value></action>
+                <action method="setData"><key>limit</key><value>10</value></action>
+            </block>
+        </reference>
+    </cms_index_index>
+</layout>

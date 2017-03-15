@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Denys_Mymod>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Denys_Mymod>
+    </modules>
+</config>
