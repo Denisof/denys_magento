@@ -24,7 +24,7 @@ class Denys_Mymod_Block_Appliances
     {
         $category = Mage::getModel('catalog/category')->load($this->getBlockCategoryId());
         $productCollection = Mage::getResourceModel('catalog/product_collection')
-            ->addCategoryFilter($category);;
+            ->addCategoryFilter($category);
         return $productCollection;
     }
 

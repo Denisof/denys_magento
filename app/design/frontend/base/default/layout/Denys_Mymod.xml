@@ -9,5 +9,63 @@
                 <action method="setData"><key>limit</key><value>10</value></action>
             </block>
         </reference>
+        <reference name="content">
+            <block type="core/template" template="denys/mymod/refubrished_carousel.phtml"/>
+        </reference>
+        <reference name="content">
+            <block type="core/template" template="denys/mymod/newarrival_carousel.phtml"/>
+        </reference>
+        <reference name="content">
+            <block type="core/template" before="-" template="denys/mymod/appliances_carousel.phtml">
+                <action method="setData"><key>category_id</key><value>42</value></action>
+                <action method="addCss"><stylesheet>css/owl.carousel.css</stylesheet></action>
+                <action method="addJs"><script>js/owl.carousel.min.js</script></action>
+            </block>
+        </reference>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/owl.carousel.min.js</name></action>
+            <action method="addItem"><type>skin_css</type><name>css/owl.carousel.css</name></action>
+        </reference>
     </cms_index_index>
+    <mymod_view_viewcategory>
+        <reference name="content">
+            <block type="core/template" before="-" template="denys/mymod/category.phtml">
+                <action method="setProductCount"><product_count>10</product_count></action>
+            </block>
+        </reference>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/owl.carousel.min.js</name></action>
+            <action method="addItem"><type>skin_css</type><name>css/owl.carousel.css</name></action>
+        </reference>
+    </mymod_view_viewcategory>
+    <mymod_view_viewnewarrival>
+        <reference name="content">
+            <block type="mymod/newarrival" name="mymod.newarrival" before="-" template="catalog/product/list.phtml">
+                <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+                    <block type="page/html_pager" name="product_list_toolbar_pager"/>
+                </block>
+                <action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>one_column</layout><count>5</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>two_columns_left</layout><count>4</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
+                <action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+            </block>
+        </reference>
+    </mymod_view_viewnewarrival>
+    <mymod_view_viewrefubrished>
+        <reference name="content">
+            <block type="mymod/refubrished" name="mymod.refubrished" before="-" template="catalog/product/list.phtml">
+                <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+                    <block type="page/html_pager" name="product_list_toolbar_pager"/>
+                </block>
+                <action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>one_column</layout><count>5</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>two_columns_left</layout><count>4</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
+                <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
+                <action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+            </block>
+        </reference>
+    </mymod_view_viewrefubrished>
 </layout>

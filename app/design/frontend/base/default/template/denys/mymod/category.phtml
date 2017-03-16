@@ -1,0 +1,23 @@
+<?php
+$_category = Mage::registry('loaded_category');
+$_productCollection = $_category->getProductCollection()->addAttributeToSelect('*');
+?>
+<div id="slideshow" class="owl-carousel" style="opacity: 1;">
+    <?php foreach ($_productCollection as $_product): ?>
+        <div class="item">
+            <a href="<?php echo $_product->getProductUrl() ?>"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(200); ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" class="img-responsive" /></a>
+        </div>
+    <?php endforeach ?>
+</div>
+<p><a href="<?php echo $_category->getUrl($_category); ?>"><?php echo  $this->__('Explore all'); ?></a></p>
+<p><a href="<?php echo $_category->getUrl($_category); ?>"></a></p>
+<a href="<?php echo $this->getUrl('mymod/index/index', array('_query' => array('category_id' => $_categoryId))) ?>">ded</a>
+<script type="text/javascript"><!--
+    jQuery('#slideshow').owlCarousel({
+        items: 6,
+        autoPlay: 3000,
+        navigation: true,
+        navigationText: ['<i class="fa fa-chevron-left fa-5x"></i>', '<i class="fa fa-chevron-right fa-5x"></i>'],
+        pagination: true
+    });
+    --></script>

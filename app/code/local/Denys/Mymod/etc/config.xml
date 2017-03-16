@@ -6,6 +6,18 @@
         </Denys_Mymod>
     </modules>
     <global>
+        <!--<rewrite>-->
+            <!--<mymod_newarrivals>-->
+                <!--<from><![CDATA[/newarrivals(.*)/]]></from>-->
+                <!--<to><![CDATA[/mymod/view/viewnewarrival/$1]]></to>-->
+                <!--<complete>1</complete>-->
+            <!--</mymod_newarrivals>-->
+            <!--<mymod_refubrished>-->
+                <!--<from><![CDATA[/refubrished(.*)/]]></from>-->
+                <!--<to><![CDATA[/mymod/view/viewrefubrished/$1]]></to>-->
+                <!--<complete>1</complete>-->
+            <!--</mymod_refubrished>-->
+        <!--</rewrite>-->
         <helpers>
             <mymod>
                 <class>Denys_Mymod_Helper</class>
@@ -16,8 +28,35 @@
                 <class>Denys_Mymod_Block</class>
             </mymod>
         </blocks>
+        <resources>
+            <denys_mymod_setup>
+                <setup>
+                    <module>Denys_Mymod</module>
+                    <class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
+                </setup>
+            </denys_mymod_setup>
+            <denys_mymod_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </denys_mymod_write>
+            <denys_mymod_read>
+                <connection>
+                <use>core_read</use>
+                </connection>
+            </denys_mymod_read>
+        </resources>
     </global>
     <frontend>
+        <routers>
+            <mymod>
+                <use>standard</use>
+                <args>
+                    <module>Denys_Mymod</module>
+                    <frontName>mymod</frontName>
+                </args>
+            </mymod>
+        </routers>
         <layout>
             <updates>
                 <mymod>
